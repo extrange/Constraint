@@ -23,6 +23,7 @@ import java.util.List;
  * todo No duties while HO on leave/block (partially done, clean up interface)
  * todo No duty on the day before HO takes leave/block
  * todo When optimum is reached, generate more solutions using that solution
+ * todo No two HOs to be on call from the same team
  *
  *
  * ===Required Features===
@@ -49,7 +50,7 @@ public class Constraint {
         for (int i = 0; i < people; i++) {
             switch (i) {
                 case 0:
-                    leave[i] = new int[]{13, 14, 15, 16};
+                    leave[i] = new int[]{13, 14, 15};
                     break;
                 case 1:
                     leave[i] = new int[]{2, 3, 4, 5, 6, 7, 13, 14};
