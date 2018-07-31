@@ -49,7 +49,7 @@ public class Constraint {
         for (int i = 0; i < people; i++) {
             switch (i) {
                 case 0:
-                    leave[i] = new int[]{13, 14, 15};
+                    leave[i] = new int[]{13, 14, 15, 16};
                     break;
                 case 1:
                     leave[i] = new int[]{2, 3, 4, 5, 6, 7, 13, 14};
