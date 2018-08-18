@@ -173,7 +173,7 @@ public class Constraint {
         }
         model.max(model.intVar(2), ho1Count).post();
 
-        /* HO leave */
+        /* Leave */
         for (int i = 0; i < people; i++) {
             /*Performance from constraining is slightly better than assigning*/
             /*duty[0][i] = model.intVar(0);*/
