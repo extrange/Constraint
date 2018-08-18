@@ -173,7 +173,7 @@ public class Constraint {
         }
         model.max(model.intVar(2), ho1Count).post();
 
-        /* Leave */
+        /*Leave*/
         for (int i = 0; i < people; i++) {
             /*Performance from constraining is slightly better than assigning*/
             /*duty[0][i] = model.intVar(0);*/
@@ -206,7 +206,7 @@ public class Constraint {
         }
 
         //Explanation-based seems to perform the best, combined with FailCounter(1000)/BacktrackCounter (10000)**
-        solver.setLNS(INeighborFactory.explanationBased(oneDArray), new FailCounter(model, 1000));
+        solver.setLNS(INeighborFactory.explanationBased(oneDArray), new FailCounter(model, 10000));
         solver.showStatistics();
 //        solver.setNoGoodRecordingFromRestarts();
         Solution solution = new Solution(model);
