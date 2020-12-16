@@ -37,7 +37,7 @@ public class SghOandG {
      * Sat: 4
      * Sun: 3*/
     private static final int[] POINTS = {0, 2, 2, 2, 2, 3, 4, 3}; //0 == no duty that day
-    private static final int MONTH = 9;
+    private static final int MONTH = 11;
     private static final int YEAR = 2018;
     private static final int PEOPLE = 9;
 
@@ -140,11 +140,11 @@ public class SghOandG {
         }
 
         // TODO: 9/25/2018 At most 1 saturday duty per person
-//        IntVar[] satDutyCount = model.intVarArray(PEOPLE, 0, 5);
-//        for (int i = 0; i < PEOPLE; i++) {
-//            model.count(POINTS[DayOfWeek.SATURDAY.getValue()], duty[i], satDutyCount[i]).post();
-//        }
-//        model.max(ONE, satDutyCount).post();
+        IntVar[] satDutyCount = model.intVarArray(PEOPLE, 0, 5);
+        for (int i = 0; i < PEOPLE-1; i++) {
+            model.count(POINTS[DayOfWeek.SATURDAY.getValue()], duty[i], satDutyCount[i]).post();
+        }
+        model.max(ONE, satDutyCount).post();
 
 
 
